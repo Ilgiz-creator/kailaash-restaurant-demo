@@ -1,3 +1,4 @@
+import Motion from "./Motion";
 import CallbackSection from "./CallbackSection";
 const mapUrl = "https://yandex.com.ge/maps/org/kaylaas/229005420861/";
 const phoneHref = "tel:+79817866060";
@@ -29,6 +30,7 @@ const schedule = [
 export default function Home() {
   return (
     <main>
+      <Motion />
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-media" aria-hidden="true" />
         <header className="site-header shell">
