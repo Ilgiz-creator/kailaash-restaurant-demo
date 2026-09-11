@@ -1,4 +1,4 @@
-import VisitPlanner from "./VisitPlanner";
+import CallbackSection from "./CallbackSection";
 const mapUrl = "https://yandex.com.ge/maps/org/kaylaas/229005420861/";
 const phoneHref = "tel:+79817866060";
 
@@ -41,7 +41,7 @@ export default function Home() {
             <a href="#atmosphere">О ресторане</a>
             <a href="#contacts">Контакты</a>
           </nav>
-          <a className="header-phone" href={phoneHref}>
+          <a className="header-phone" href={phoneHref} aria-label="Позвонить в Кайлаас: +7 981 786-60-60">
             +7 981 786-60-60
           </a>
         </header>
@@ -55,7 +55,7 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#plan">
-              Спланировать вечер
+              Заказать звонок
             </a>
             <a
               className="button button-ghost"
@@ -105,7 +105,7 @@ export default function Home() {
                 <p className="format-number">{format.number}</p>
                 <h3>{format.title}</h3>
                 <p>{format.text}</p>
-                <a href="#plan">Обсудить {format.title.toLowerCase()}</a>
+                <a href="#plan">{format.title === 'С собой' ? 'Уточнить заказ с собой' : `Обсудить ${format.title.toLowerCase()}`}</a>
               </article>
             ))}
           </div>
@@ -127,7 +127,7 @@ export default function Home() {
         </div>
       </section>
 
-      <VisitPlanner />
+      <CallbackSection />
       <section className="visit-section" id="contacts">
         <div className="shell visit-grid">
           <div className="visit-copy">
