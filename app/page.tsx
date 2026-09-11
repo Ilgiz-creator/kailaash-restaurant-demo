@@ -1,3 +1,4 @@
+import VisitPlanner from "./VisitPlanner";
 const mapUrl = "https://yandex.com.ge/maps/org/kaylaas/229005420861/";
 const phoneHref = "tel:+79817866060";
 
@@ -10,12 +11,12 @@ const formats = [
   {
     number: "02",
     title: "Банкет",
-    text: "Кайлаас отмечен в Яндекс Картах как банкетный зал. Свободную дату и формат праздника уточните у ресторана.",
+    text: "Семейный праздник или встреча большой компанией. Обсудите с рестораном дату, число гостей и банкетное меню.",
   },
   {
     number: "03",
     title: "С собой",
-    text: "В карточке ресторана доступны еда навынос и доставка. Актуальные условия подскажут по телефону.",
+    text: "Индийская кухня дома: еда навынос и доставка. Перед заказом уточните состав блюд, время приготовления и условия доставки.",
   },
 ];
 
@@ -53,8 +54,8 @@ export default function Home() {
             праздников.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href={phoneHref}>
-              Забронировать столик
+            <a className="button button-primary" href="#plan">
+              Спланировать вечер
             </a>
             <a
               className="button button-ghost"
@@ -67,8 +68,9 @@ export default function Home() {
           </div>
         </div>
 
+        <p className="art-caption shell">Иллюстрация концепта, не фотография блюд или интерьера ресторана</p>
         <div className="hero-facts shell" aria-label="Кратко о ресторане">
-          <p><strong>4,9</strong><span>рейтинг в Яндексе</span></p>
+          <p><strong>4,9</strong><span>Яндекс · 11.09.2026</span></p>
           <p><strong>102</strong><span>оценки гостей</span></p>
           <p><strong>12:00</strong><span>открываемся ежедневно</span></p>
         </div>
@@ -103,7 +105,7 @@ export default function Home() {
                 <p className="format-number">{format.number}</p>
                 <h3>{format.title}</h3>
                 <p>{format.text}</p>
-                <a href={phoneHref}>Позвонить в ресторан</a>
+                <a href="#plan">Обсудить {format.title.toLowerCase()}</a>
               </article>
             ))}
           </div>
@@ -125,6 +127,7 @@ export default function Home() {
         </div>
       </section>
 
+      <VisitPlanner />
       <section className="visit-section" id="contacts">
         <div className="shell visit-grid">
           <div className="visit-copy">
@@ -162,6 +165,7 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="location-section shell" aria-label="Кайлаас на Яндекс Карте"><div className="map-title"><h2>Народная, 87Б</h2><a href={mapUrl} target="_blank" rel="noreferrer">Маршрут в Яндекс Картах ↗</a></div><iframe title="Яндекс Карта: ресторан Кайлаас" src="https://yandex.ru/map-widget/v1/?ol=biz&oid=229005420861&z=16" width="100%" height="420" loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen /><p className="planner-note">Если карта не загрузилась, откройте маршрут по ссылке выше.</p></section>
       <footer>
         <div className="shell footer-grid">
           <a className="wordmark footer-wordmark" href="#top">
@@ -170,7 +174,7 @@ export default function Home() {
           </a>
           <p>Индийский ресторан и банкетный зал</p>
           <p className="concept-note">
-            Неофициальный приватный концепт. Данные проверены 11.09.2026.
+            Неофициальный демонстрационный концепт. Данные проверены 11.09.2026.
           </p>
         </div>
       </footer>
